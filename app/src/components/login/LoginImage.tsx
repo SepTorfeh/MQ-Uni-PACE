@@ -6,11 +6,13 @@ const StyledLoginImage = styled.div`
 
 `
 
+const image = "image/loginImage.svg"
+
 const LoginImage = () => {
 
     return (
             <StyledLoginImage>
-
+                <img src={image} />
             </StyledLoginImage>
     )
 
