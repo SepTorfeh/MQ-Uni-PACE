@@ -1,11 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import LoginImage from './components/login/LoginImage';
+import LoginWrapper from './components/login/LoginWrapper';
 
 function App() {
   return (
- <LoginImage></LoginImage>
+   <LoginWrapper />
  );
 }
 
