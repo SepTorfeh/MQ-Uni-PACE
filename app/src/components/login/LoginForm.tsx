@@ -18,7 +18,6 @@ const StyledLoginFormWrapper = styled.div`
     max-width: 421px;
     width: 100%;
     display: flex;
-    gap: 40px;
     flex-direction: column;
     -webkit-box-pack: center;
     justify-content: center;
@@ -51,6 +50,14 @@ const LoginForm = () => {
                         placeHolder="Type in email address"
                         inputType="email"
                         name="email"
+                        />
+                </StyledLoginForm>
+                <StyledLoginForm>
+                    <StyledInputComponent 
+                        label="Password" 
+                        placeHolder="Type in password"
+                        inputType="password"
+                        name="password"
                         />
                 </StyledLoginForm>
 

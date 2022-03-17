@@ -17,4 +17,5 @@ export const StyledSubHeading = styled.p`
     line-height: 24px;
     font-weight: 400;
     color: rgb(58, 88, 98);
+    margin-bottom: 40px;
 `
