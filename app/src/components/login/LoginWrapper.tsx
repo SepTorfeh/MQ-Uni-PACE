@@ -15,7 +15,17 @@ const StyledLoginWrapper = styled.div`
         height: 100vh;
     }
 
-    
+`
+
+const LoginFormWrapper = styled.div`
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 0px 48px;
 
 `
 
@@ -24,7 +34,9 @@ const LoginWrapper = () => {
     return (
             <StyledLoginWrapper>
                 <LoginImage />
-                <LoginForm />
+                <LoginFormWrapper>
+                    <LoginForm />
+                </LoginFormWrapper>
             </StyledLoginWrapper>
     )
 

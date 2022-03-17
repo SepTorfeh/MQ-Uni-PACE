@@ -1,25 +1,60 @@
 import React from 'react';
 import styled from 'styled-components';
 import { mobileMaxWidth } from '../reusable/screenSize';
+import { StyledH1, StyledSubHeading } from '../reusable/Heading';
+import StyledInputComponent from '../reusable/StyledInputComponent';
 
 const StyledLoginForm = styled.form`
-    width: auto;
-    height: auto;
-    position: relative;
-    justify-self: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    align-items: flex-start;
+`
 
-    @media (max-width: ${mobileMaxWidth}){
-        align-self: center;
-    }
+const StyledLoginFormWrapper = styled.div`
+    max-width: 421px;
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    margin:auto;
 
+`
+
+const StyledLoginFormHeading = styled.div`
+    text-align: center; 
+    color: rgb(9, 46, 59);
 `
 
 const LoginForm = () => {
 
     return (
-            <StyledLoginForm>
-                <h1>Welcome</h1>
-            </StyledLoginForm>
+            <StyledLoginFormWrapper>
+               
+                <StyledLoginFormHeading>
+                    <StyledH1>Welcome</StyledH1>
+                    <StyledSubHeading>
+                        Log in to your Faethm account
+                    </StyledSubHeading>                   
+                </StyledLoginFormHeading>               
+
+                <StyledLoginForm>
+                    <StyledInputComponent 
+                        label="Email Address" 
+                        placeHolder="Type in email address"
+                        inputType="email"
+                        name="email"
+                        />
+                </StyledLoginForm>
+
+            </StyledLoginFormWrapper>
     )
 
 }
