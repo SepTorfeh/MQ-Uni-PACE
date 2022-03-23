@@ -4,6 +4,7 @@ import LoginForm from './LoginForm';
 import LoginImage from './LoginImage';
 import { mobileMaxWidth } from '../reusable/screenSize';
 
+
 const StyledLoginWrapper = styled.div`
     display: grid;
     background: white;

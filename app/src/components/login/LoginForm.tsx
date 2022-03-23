@@ -3,6 +3,11 @@ import styled from 'styled-components';
 import { mobileMaxWidth } from '../reusable/screenSize';
 import { StyledH1, StyledSubHeading } from '../reusable/Heading';
 import StyledInputComponent from '../reusable/StyledInputComponent';
+import {LoginButton} from '../reusable/Button';
+import { useAppDispatch, useAppSelector } from '../../hooks';
+import { useState } from "react";
+import {RootState} from '../../store';
+import { login } from "../../actions/userAction";
 
 const StyledLoginForm = styled.form`
     width: 100%;
@@ -33,6 +38,18 @@ const StyledLoginFormHeading = styled.div`
 `
 
 const LoginForm = () => {
+    //const [email, setEmail] = useState<string>("");
+    //const [password, setPassword] = useState<string>("");
+
+//    const dispatch = useAppDispatch();
+
+    //const userLogin = useAppSelector((state: RootState) => state.userLogin);
+    //const { loading, error, userInfo } = userLogin;
+    
+  //  const submitHandler = (e) => {
+//        e.preventDefault();
+ //       dispatch(login(email, password));
+ //   };
 
     return (
             <StyledLoginFormWrapper>
@@ -45,20 +62,23 @@ const LoginForm = () => {
                 </StyledLoginFormHeading>               
 
                 <StyledLoginForm>
+
                     <StyledInputComponent 
                         label="Email Address" 
                         placeHolder="Type in email address"
                         inputType="email"
                         name="email"
                         />
-                </StyledLoginForm>
-                <StyledLoginForm>
+
                     <StyledInputComponent 
                         label="Password" 
                         placeHolder="Type in password"
                         inputType="password"
                         name="password"
                         />
+                    
+                    <LoginButton txt="Log in"/>
+
                 </StyledLoginForm>
 
             </StyledLoginFormWrapper>
