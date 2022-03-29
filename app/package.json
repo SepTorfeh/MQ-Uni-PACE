@@ -17,7 +17,9 @@
   "scripts": {
     "client": "npm start --prefix client",
     "server": "nodemon ./server/server.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "data:import": "node server/seeder",
+    "data:destroy": "node server/seeder -d"
   },
   "devDependencies": {
     "@shelf/jest-mongodb": "^2.1.0",
