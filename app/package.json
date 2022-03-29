@@ -14,6 +14,13 @@
     "@types/react-dom": "^17.0.13",
     "@types/react-redux": "^7.1.23",
     "axios": "^0.26.1",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.7",
+    "morgan": "^1.10.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.6",
@@ -24,10 +31,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "dev": "nodemon ./server/server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:3001",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -48,6 +57,7 @@
   },
   "devDependencies": {
     "@redux-devtools/core": "^3.11.0",
-    "@types/styled-components": "^5.1.24"
+    "@types/styled-components": "^5.1.24",
+    "nodemon": "^2.0.15"
   }
 }
