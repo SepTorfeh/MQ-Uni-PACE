@@ -1,20 +1,8 @@
 [//]: <> (start placeholder for auto-badger)
 
 
-[![version](https://img.shields.io/npm/v/app.svg?style=flat-square)](https://npmjs.org/app)
-[![min size](https://img.shields.io/bundlephobia/min/app?style=flat-square)](https://bundlephobia.com/result?p=app)
-[![mingzip size](https://img.shields.io/bundlephobia/minzip/app)](https://bundlephobia.com/result?p=app)
-[![license](https://img.shields.io/npm/l/app?color=%23007a1f&style=flat-square)](https://github.com/LanceWhitehorn/Faethm/blob/master/LICENSE)
-
-[![dependancies](https://img.shields.io/librariesio/release/npm/app?color=%23007a1f&style=flat-square)](https://libraries.io/npm/app)
-[![downloads](https://img.shields.io/npm/dm/app?style=flat-square&color=%23007a1f)](https://npmcharts.com/compare/app)
-[![all contributors](https://img.shields.io/github/all-contributors/LanceWhitehorn/Faethm?style=flat-square)](https://github.com/LanceWhitehorn/Faethm/graphs/contributors)
 [![code of conduct](https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square)](https://github.com/LanceWhitehorn/Faethm/blob/master/CODE_OF_CONDUCT.md)
 
-[![stargazers](https://img.shields.io/github/stars/LanceWhitehorn/Faethm?style=social)](https://github.com/LanceWhitehorn/Faethm/stargazers)
-[![number of forks](https://img.shields.io/github/forks/LanceWhitehorn/Faethm?style=social)](https://github.com/LanceWhitehorn/Faethm/fork)
-
-###### :clap: & :heart: to [auto badger](https://github.com/technikhil314/auto-badger) for making badging simple
 
 [//]: <> (end placeholder for auto-badger)
 
