@@ -1,46 +1,211 @@
-# Getting Started with Create React App
+[//]: <> (start placeholder for auto-badger)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+[![version](https://img.shields.io/npm/v/app.svg?style=flat-square)](https://npmjs.org/app)
+[![min size](https://img.shields.io/bundlephobia/min/app?style=flat-square)](https://bundlephobia.com/result?p=app)
+[![mingzip size](https://img.shields.io/bundlephobia/minzip/app)](https://bundlephobia.com/result?p=app)
+[![license](https://img.shields.io/npm/l/app?color=%23007a1f&style=flat-square)](https://github.com/LanceWhitehorn/Faethm/blob/master/LICENSE)
 
-In the project directory, you can run:
+[![dependancies](https://img.shields.io/librariesio/release/npm/app?color=%23007a1f&style=flat-square)](https://libraries.io/npm/app)
+[![downloads](https://img.shields.io/npm/dm/app?style=flat-square&color=%23007a1f)](https://npmcharts.com/compare/app)
+[![all contributors](https://img.shields.io/github/all-contributors/LanceWhitehorn/Faethm?style=flat-square)](https://github.com/LanceWhitehorn/Faethm/graphs/contributors)
+[![code of conduct](https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square)](https://github.com/LanceWhitehorn/Faethm/blob/master/CODE_OF_CONDUCT.md)
 
-### `npm start`
+[![stargazers](https://img.shields.io/github/stars/LanceWhitehorn/Faethm?style=social)](https://github.com/LanceWhitehorn/Faethm/stargazers)
+[![number of forks](https://img.shields.io/github/forks/LanceWhitehorn/Faethm?style=social)](https://github.com/LanceWhitehorn/Faethm/fork)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+###### :clap: & :heart: to [auto badger](https://github.com/technikhil314/auto-badger) for making badging simple
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+[//]: <> (end placeholder for auto-badger)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> Onboarding UI built with MERN stack (MongoDB, ExpressJS, ReactJS, Nodejs)
 
-### `npm run build`
+## Table of Contents
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Table of Contents](#table-of-contents)
+- [Demo videos](#demo-videos)
+- [Purpose](#purpose)
+- [Project URL:](#project-url)
+- [Features](#features)
+- [Usage](#usage)
+  - [Env Variables](#env-variables)
+  - [Install Dependencies (frontend & backend)](#install-dependencies-frontend--backend)
+  - [Run](#run)
+  - [Seed Database](#seed-database)
+- [Project Layout](#project-layout)
+  - [Front-end layout](#front-end-layout)
+  - [Back-end layout](#back-end-layout)
+- [Testing](#testing)
+- [Roles](#roles)
+- [Deployment](#deployment)
+- [License](#license)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Demo videos
+> upcoming
 
-### `npm run eject`
+## Purpose
+The Onboarding UI project is an additional data driven step for First Time User (FTU) which provides users with the opportunity to customise their experience on the Faethm application.
+The UI provides a tailored landing page for users and improves the user experience (UX) on the Faethm platform.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Project URL:
+> upcoming
+## Features
+> upcoming
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Usage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Env Variables
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Create a .env file in the root and add the following
 
-## Learn More
+```
+NODE_ENV = development
+PORT = 3001
+MONGO_URL = your mongodb uri
+JWT_SECRET = set your secret key for JWT token
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<!--Create a .env file in the **client/** folder-->
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!--```-->
+<!--SKIP_PREFLIGHT_CHECK=true-->
+<!--```-->
+
+### Install Dependencies (frontend & backend)
+
+```
+npm install
+cd client
+npm install
+```
+
+### Run
+
+```
+# Run frontend (:3000) & backend (:3001)
+npm run dev
+
+# Run backend only (with nodemon)
+npm run server
+
+# Run frontend only
+npm run client
+
+```
+
+**Note**: for seeding the data, you should destroy data first then import them.
+
+### Seed Database
+
+You can use the following commands to seed the database with some sample users and personas as well as destroy all data
+
+```
+# Import data
+npm run data:import
+
+# Destroy data
+npm run data:destroy
+```
+
+**Sample User logins**
+
+```
+sep@test.com
+sep
+
+lance@test.com
+lance
+
+```
+
+## Project Layout
+
+### Front-end layout
+
+```
+src/                         Root directory of react app
+├── App.test.tsx             Testing for the application
+├── App.tsx                  Layout of the whole application
+├── actions/                 Store the action of global store (Redux)
+├── components               Multiple pages of the app (react-router)
+│   ├── login                Authentication page
+│   └── reusable             re-usable components
+├── hooks.ts                 hooks for Redux
+├── index.css                Apply global styling
+├── index.tsx                Main entry point for the application
+├── react-app-env.d.ts       TypeScript set up
+├── reducers                 Reducers for global state (Redux)
+├── setupTests.ts            TypeScript test
+└── store.ts                 Main store for global state (Redux)
+```
+
+### Back-end layout
+
+```
+backend/
+├── app.js                          Main entry for REST API of the application
+├── config/                         Config folder (currently, only setup for database)
+├── controller/                     Main logic of the API
+├── data/                           Testing data
+├── middlewares/                    Middlewares
+│   ├── authMiddleware.js           Middlewares for checking token
+│   └── errorHandlers.js            Middlewares for handling any errors
+├── model/                          Model data for mongodb
+├── routes/                         All the main routes of the API
+├── seeder.js                       Script for auto import and destroy the data (testing purpose only)
+├── server.js                       Run the server
+├── test/                           All the tests for API
+└── utils/                          Contain all re-usable functions
+    └── generateToken.js            Currently, only having function for generate JWT tokens
+```
+
+## Testing
+> upcoming
+
+```
+npm run test
+```
+
+After running the script, you will get a **coverage** folder that contains details about all the test case as well as the percentage of coverage for the API.  
+You can open the file _coverage/lcov-report/index.html_ to have better visualization.
+
+
+## Roles
+1. Sepher Torfeh Nejad: Lead Developer, Documentation Support
+2. Lance Te: Team Lead, Lead Formatter, Developer, Documentation Support
+3. Erik Horvath: Editor, Documentation Officer, Developer
+4. Marcus Ikeda: Documentation Officer, Developer
+5. Rojwal Shrestha: Documentation Officer, Developer
+
+Communications and collaboration:\
+   i. The team had weekly meetings to discuss tasks that needs to be done, and go over presentation for sponsor meeting\
+   ii. Pull requests are reviewed by at least 1 other team member. Merge conflicts are promptly resolved.
+
+## Deployment
+> upcoming
+
+## License
+
+MIT License
+
+Copyright (c) 2022
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
