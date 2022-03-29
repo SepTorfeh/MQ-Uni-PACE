@@ -15,6 +15,11 @@ const userSchema = mongoose.Schema(
         password: {
             type: String,
             require: true,
+        },
+        persona: {
+            type: String,
+            require: true,
+            default: "",
         }
     },
     {
@@ -27,6 +32,8 @@ userSchema.methods.matchPassword = async function (enteredPassword) {
 };
 
 // Middleware for encryt the password
+// used when user updates password
+// NOT USED YET since we don't allow user change personal detait
 userSchema.pre("save", async function (next) {
     if (!this.isModified("password")) {
         next();
