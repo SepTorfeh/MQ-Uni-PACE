@@ -20,6 +20,7 @@
   - [Env Variables](#env-variables)
   - [Install Dependencies (frontend & backend)](#install-dependencies-frontend--backend)
   - [Run](#run)
+  - [Run with Docker](#run-with-docker)
   - [Seed Database](#seed-database)
 - [Project Layout](#project-layout)
   - [Front-end layout](#front-end-layout)
@@ -87,11 +88,11 @@ npm run client
 ```
 # Run fronted (:3000)
 cd client
-docker build Dockerfile -t client .
+docker build -t client .
 docker run -it -p 4001:3000 client
 
 # Run backend (:3001)
-docker build Dockerfile -t server .
+docker build -t server .
 docker run -it -p 4002:3001 server
 
 ```
