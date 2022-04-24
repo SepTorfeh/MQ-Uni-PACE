@@ -171,7 +171,6 @@ const SurveyWrapper = () => {
                 </div>
             </div>
         </div>
->>>>>>> 87f38ea488632c6c7b3dec85ff9a3b1c32c73168
     )
 
 }
