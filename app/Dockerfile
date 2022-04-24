@@ -1,7 +1,11 @@
 FROM node:alpine
 WORKDIR /app
-COPY package.json ./
-COPY package-lock.json ./
+
 COPY ./ ./
 RUN npm i
-CMD ["npm", "run", "server"]
+
+WORKDIR /app/client
+RUN npm i
+
+WORKDIR /app
+CMD ["npm", "run", "dev"]
