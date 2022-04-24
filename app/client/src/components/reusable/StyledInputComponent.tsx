@@ -56,17 +56,23 @@ type StyledInputProp = {
     label:string;
     placeHolder:string;
     inputType:string;
-    name:string
+    name:string;
+    func: any;
 }
 
-const StyledInputComponent = ({label, placeHolder, inputType, name}:StyledInputProp) => {
+const StyledInputComponent = ({label, placeHolder, inputType, name, func}:StyledInputProp) => {
 
     return (
     <StyledInputWrapper>
         <StyledLabel>
             <label htmlFor={name} >{label}</label>
         </StyledLabel>
-        <StyledInput name={name} placeholder={placeHolder} type={inputType} />
+        <StyledInput 
+            name={name} 
+            placeholder={placeHolder} 
+            type={inputType}
+            onChange={(e) => func(e.target.value)}
+            />
         </StyledInputWrapper>
     )
 }

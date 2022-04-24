@@ -7,8 +7,8 @@ const generateToken = require("../utils/generateToken");
 // @route   POST /api/user/login
 // @access  Public
 const login = asyncHandler(async (req, res) => {
-    const {email, password} = req.body;
-
+    const {username, password} = req.body;
+    const email = username;
     const user = await User.findOne({email});
     if (user && (await user.matchPassword(password))) {
         const persona = await Persona.findById(user.persona);
