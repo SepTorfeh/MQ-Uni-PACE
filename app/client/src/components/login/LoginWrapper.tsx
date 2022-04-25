@@ -1,44 +1,22 @@
 import React from 'react';
-import styled from 'styled-components';
 import LoginForm from './LoginForm';
-import LoginImage from './LoginImage';
-import { mobileMaxWidth } from '../reusable/screenSize';
+import '../../styles/login.css'
 
+const image = 'image/loginImage.svg'
+const logo = 'image/logo_dark.svg'
 
-const StyledLoginWrapper = styled.div`
-    display: grid;
-    background: white;
-    grid-template-columns: 3fr 2fr;
-    @media (max-width: ${mobileMaxWidth}){
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        height: 100vh;
-    }
-
-`
-
-const LoginFormWrapper = styled.div`
-    box-sizing: border-box;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-    padding: 0px 48px;
-
-`
+// Removed styled, LoginImage and mobileMaxWidth
 
 const LoginWrapper = () => {
 
     return (
-            <StyledLoginWrapper>
-                <LoginImage />
-                <LoginFormWrapper>
-                    <LoginForm />
-                </LoginFormWrapper>
-            </StyledLoginWrapper>
+        <div className="login-page">
+            <div className="box image">
+                <img src={logo} className="landing-logo" />
+                <img src={image} className="landing-img" />
+            </div>
+            <div className="box login-form"><LoginForm /></div>
+        </div>
     )
 
 }

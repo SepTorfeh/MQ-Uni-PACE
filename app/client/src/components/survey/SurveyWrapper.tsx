@@ -4,7 +4,7 @@ import { Box, Grid, Modal } from '@mui/material'
 import Persona from './PersonaComponent'
 import PersonaProfiles from './PersonaProfiles'
 
-const logo = 'image/logo.svg'
+const logo = 'image/logo_white.svg'
 const warning = 'image/icons/warning.svg'
 const close = 'image/icons/close.svg'
 

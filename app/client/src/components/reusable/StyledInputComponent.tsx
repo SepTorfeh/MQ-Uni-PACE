@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import React from 'react';
+import '../../styles/login.css'
 
 
 const StyledInputWrapper = styled.div`
@@ -17,6 +18,7 @@ const StyledLabel = styled.label`
     display: block;
     color: rgb(107, 130, 137);
     margin-bottom: 8px;
+    text-align: left;
 
 `
 
@@ -72,6 +74,7 @@ const StyledInputComponent = ({label, placeHolder, inputType, name, func}:Styled
             placeholder={placeHolder} 
             type={inputType}
             onChange={(e) => func(e.target.value)}
+            className="input"
             />
         </StyledInputWrapper>
     )
