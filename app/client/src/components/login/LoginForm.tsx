@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { StyledH1, StyledSubHeading } from '../reusable/Heading';
 import StyledInputComponent from '../reusable/StyledInputComponent';
-import {LoginButton} from '../reusable/Button';
+import { LoginButton } from '../reusable/Button';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { FormEvent, useState, useEffect } from "react";
-import {fetchUserLoginAsync} from "../../redux/login/login-slice";
-import {useNavigate} from 'react-router-dom';
+import { fetchUserLoginAsync } from "../../redux/login/login-slice";
+import { useNavigate } from 'react-router-dom';
 import Alert from '@mui/material/Alert';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
@@ -90,7 +90,7 @@ const LoginForm = () => {
                         func={setPassword}
                         />
                     
-                    <LoginButton txt="Log in"/>
+                    <LoginButton txt="Log in" />
 
                 </StyledLoginForm>
 
