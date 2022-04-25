@@ -1,0 +1,108 @@
+.page {
+    background: #F1F3F7;
+    min-height: 100vh;
+    font-size: 0.9em;
+    
+    /* Disable select */
+	user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+.navbar {
+    background: #092E3B;
+    color: white;
+    padding: 1em 2em;
+}
+.container {
+    padding: 3em 4em;
+    height: 100%;
+    display: inline-block;
+}
+
+.persona {
+    background: #E2E2E2;
+    border: 0.15em solid #989898;
+    display: flex;
+    padding: 1vh 2vh;
+    height: 15vh;
+    align-items: center;
+}
+.icon {
+    padding: 0px 3em 0px 0px;
+    height: 90%;
+}
+.title {
+    font-weight: bold;
+    padding-bottom: 0.5em;
+}
+.desc {
+    /* Nothing needed for now */
+}
+
+.button {
+    /* Reset appearance */
+    appearance: none;
+    -webkit-appearance: none;
+	-khtml-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+
+    float: right;
+    border: 0px;
+    background: #4FB4AC;
+    color: white;
+    width: 15em;
+    height: 2.5em;
+    border-radius: 0.5em;
+}
+.button:hover {
+    background: #33C4BD;
+    cursor: pointer;
+}
+
+/* https://codepen.io/NielsVoogt/pen/XWjPdjO */
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: auto;
+    background: #E2E2E2;
+    border-radius: 0.5em;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    padding: 1.5em 2em;
+}
+.modal-title {
+    position: relative;
+    font-weight: bold;
+    padding-bottom: 1em;
+    display: flex;
+    align-items: center;
+}
+.modal-title-image {
+    padding-right: 1em;
+}
+.modal-close {
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding: 1.5em;
+    cursor: pointer;
+}
+.modal-content {
+    /* Nothing needed for now */
+}
+
+/* Disable image dragging */
+img {
+    user-drag: none;
+	-webkit-user-drag: none;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
