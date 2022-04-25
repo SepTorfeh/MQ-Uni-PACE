@@ -1,6 +1,6 @@
 import '../../styles/survey.css'
 import { useState, useEffect } from 'react'
-import { Container, Box, Grid, Modal } from '@mui/material'
+import { Box, Grid, Modal } from '@mui/material'
 import Persona from './PersonaComponent'
 import PersonaProfiles from './PersonaProfiles'
 
