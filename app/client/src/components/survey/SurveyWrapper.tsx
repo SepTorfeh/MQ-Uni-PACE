@@ -35,6 +35,7 @@ const SurveyWrapper = () => {
         <div className="page">
             <div className="navbar">
                 <img src={logo} />
+                <div className="user-circle">MT</div>
             </div>
             <div className="container">
                 <div className="title">Help us customise your experience!</div>

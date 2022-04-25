@@ -10,12 +10,26 @@
 	-moz-user-select: none;
 	-ms-user-select: none;
 }
-
 .navbar {
     background: #092E3B;
     color: white;
-    padding: 1em 2em;
+    padding: 1.5em 2em;
+    display: flex;
+    justify-content: space-between;
 }
+.user-circle {
+    height: 3em;
+    width: 3em;
+    background-color: #eee;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #092E3B;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
 .container {
     padding: 3em 4em;
     height: 100%;
@@ -26,13 +40,13 @@
     background: #E2E2E2;
     border: 0.15em solid #989898;
     display: flex;
-    padding: 1vh 2vh;
-    height: 15vh;
+    padding: 0.5em 2em;
+    height: 100%;
     align-items: center;
 }
 .icon {
     padding: 0px 3em 0px 0px;
-    height: 90%;
+    height: 100%;
 }
 .title {
     font-weight: bold;
