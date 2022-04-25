@@ -1,6 +1,6 @@
 import React from 'react';
 import LoginForm from './LoginForm';
-import '../../styles/login.css'
+import '../../styles/login.css';
 
 const image = 'image/loginImage.svg'
 const logo = 'image/logo_dark.svg'

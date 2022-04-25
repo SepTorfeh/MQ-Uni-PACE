@@ -43,7 +43,7 @@ const LoginForm = () => {
 
     const loading = useAppSelector(state => state.login.loading);
     const error = useAppSelector(state => state.login.error);
-    const isAuthenticated = useAppSelector(state => !!state.login.token)
+    const isAuthenticated = useAppSelector(state => !!state.login.token);
 
     const [username, setUsername] = useState<string>("");
     const [password, setPassword] = useState<string>("");

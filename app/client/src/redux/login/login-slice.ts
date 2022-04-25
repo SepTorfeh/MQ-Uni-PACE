@@ -6,6 +6,7 @@ export interface LoginState {
     error: string | boolean;
     token: string | undefined;
     username: string | undefined;
+    persona: string | undefined;
 }
 
 const initialState: LoginState = {
@@ -13,6 +14,7 @@ const initialState: LoginState = {
     error: false,
     token: "",
     username: "",
+    persona: "unknown"
 };
 
 // The function below is called a thunk and allows us to perform async logic. It
