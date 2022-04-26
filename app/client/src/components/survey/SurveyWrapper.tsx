@@ -5,16 +5,19 @@ import Persona from './PersonaComponent'
 import PersonaProfiles from './PersonaProfiles'
 import {useAppDispatch, useAppSelector} from '../../redux/hooks'
 import {fetchSurveySubmitAsync} from '../../redux/survey/survey-slice'
+import { useNavigate } from 'react-router-dom';
 
 const logo = 'image/logo_white.svg'
 const warning = 'image/icons/warning.svg'
 const close = 'image/icons/close.svg'
 
 const SurveyWrapper = () => {
+    let navigate = useNavigate();
     
     const loading = useAppSelector(state => state.survey.loading);
     const error = useAppSelector(state => state.survey.error);
     //will be used to show errors or spinner for async func call
+    const isAuthenticated = useAppSelector(state => !!state.login.token);
 
     const [personas, setPersonas] = useState<any[]>([])
     const [selectedPersona, setSelectedPersona] = useState('')
@@ -25,6 +28,9 @@ const SurveyWrapper = () => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
+        if(!isAuthenticated){
+            navigate("/");
+        }
         setPersonas(PersonaProfiles)
     }, [])
 
