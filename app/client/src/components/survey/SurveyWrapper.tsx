@@ -6,8 +6,8 @@ import PersonaProfiles from './PersonaProfiles'
 import {useAppDispatch, useAppSelector} from '../../redux/hooks'
 import {fetchSurveySubmitAsync} from '../../redux/survey/survey-slice'
 import { useNavigate } from 'react-router-dom';
+import Navbar from '../reusable/Navbar'
 
-const logo = 'image/logo_white.svg'
 const warning = 'image/icons/warning.svg'
 const close = 'image/icons/close.svg'
 
@@ -49,10 +49,7 @@ const SurveyWrapper = () => {
 
     return (
         <div className="page">
-            <div className="navbar">
-                <img src={logo} />
-                <div className="user-circle">MT</div>
-            </div>
+            <Navbar />
             <div className="container">
                 <div className="title">Help us customise your experience!</div>
                 <div className="desc">Please select which <u>category</u> best describes you.</div>
@@ -65,9 +62,7 @@ const SurveyWrapper = () => {
                     </Box>
                 </Modal>
 
-                <br /><br />
-
-                <Box sx={{ flexGrow: 1 }} style={{ marginBottom:'3em' }}>
+                <Box sx={{ flexGrow: 1 }} style={{ margin:'2em 0em 3em' }}>
                     <Grid container rowSpacing={{ xs: 1, sm: 3, md: 5 }} columnSpacing={{ xs: 0.5, sm: 2, md: 3 }}>
                         {personas.map(p =>
                             <Persona
@@ -77,7 +72,7 @@ const SurveyWrapper = () => {
                                 desc={p.desc}
                                 icon={p.icon}
                                 highlight={p.highlight}
-                                setHighlight={() => highlight(p.id)}></Persona>
+                                setHighlight={() => highlight(p.id)} />
                         )}
                     </Grid>
                 </Box>
@@ -88,4 +83,4 @@ const SurveyWrapper = () => {
 
 }
 
-export default SurveyWrapper;
+export default SurveyWrapper
