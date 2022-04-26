@@ -3,18 +3,26 @@ import { useState, useEffect } from 'react'
 import { Box, Grid, Modal } from '@mui/material'
 import Persona from './PersonaComponent'
 import PersonaProfiles from './PersonaProfiles'
+import {useAppDispatch, useAppSelector} from '../../redux/hooks'
+import {fetchSurveySubmitAsync} from '../../redux/survey/survey-slice'
 
 const logo = 'image/logo_white.svg'
 const warning = 'image/icons/warning.svg'
 const close = 'image/icons/close.svg'
 
 const SurveyWrapper = () => {
+    
+    const loading = useAppSelector(state => state.survey.loading);
+    const error = useAppSelector(state => state.survey.error);
+    //will be used to show errors or spinner for async func call
 
     const [personas, setPersonas] = useState<any[]>([])
     const [selectedPersona, setSelectedPersona] = useState('')
     const [open, setOpen] = useState(false)
     const handleOpen = () => setOpen(true)
     const handleClose = () => setOpen(false)
+    
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
         setPersonas(PersonaProfiles)
@@ -28,7 +36,9 @@ const SurveyWrapper = () => {
     }
 
     const submit = () => {
-        selectedPersona ? console.log(selectedPersona) : handleOpen()
+        //selectedPersona ? console.log(selectedPersona) : handleOpen()
+        const persona: string = selectedPersona;
+        selectedPersona ? dispatch(fetchSurveySubmitAsync({ persona })) : handleOpen()
     }
 
     return (

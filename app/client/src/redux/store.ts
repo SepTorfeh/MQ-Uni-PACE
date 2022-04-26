@@ -1,5 +1,6 @@
 import {configureStore, ThunkAction, Action} from "@reduxjs/toolkit";
 import loginReducer from "./login/login-slice";
+import surveyReducer from "./survey/survey-slice";
 
 const userInfoFromStorage = localStorage.getItem("userInfo")
     ? JSON.parse(localStorage.getItem("userInfo") || '{}')
@@ -11,8 +12,11 @@ const initialState = {
         error: false,
         token: userInfoFromStorage ? userInfoFromStorage.token : "",
         username: userInfoFromStorage ? userInfoFromStorage.email : "",
-        persona: userInfoFromStorage ? userInfoFromStorage.persona : "",
-
+    },
+    survey: {
+        loading: false,
+        error: false,
+        persona: "",
     },
 }
 
@@ -20,6 +24,7 @@ export const store = configureStore({
     reducer: {
 
         login: loginReducer,
+        survey: surveyReducer,
         // Add the generated reducer as a specific top-level slice
     },
     preloadedState: initialState,
