@@ -13,8 +13,6 @@ const login = asyncHandler(async (req, res) => {
     if (user && (await user.matchPassword(password))) {
         const persona = await Persona.findById(user.persona);
         res.json({
-            _id: user._id,
-            name: user.name,
             email: user.email,
             persona: persona.name,
             token: generateToken(user._id),
@@ -24,6 +22,7 @@ const login = asyncHandler(async (req, res) => {
         throw new Error("Invalid Email or Password");
     }
 });
+
 
 module.exports = {
     login,

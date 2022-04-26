@@ -3,6 +3,7 @@ const path = require("path");
 const express = require("express");
 const {notFound, errorHandler} = require("./middlewares/errorHandlers");
 const userRoutes = require("./routes/userRoutes");
+const surveyRoutes = require("./routes/surveyRoutes");
 
 const connectDB = require("./config/db");
 connectDB();
@@ -19,6 +20,7 @@ app.use(express.json());
 
 // Main Routes
 app.use("/api/user", userRoutes);
+app.use("/api/survey", surveyRoutes);
 
 if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(path.resolve("./"), "/client/build")));
