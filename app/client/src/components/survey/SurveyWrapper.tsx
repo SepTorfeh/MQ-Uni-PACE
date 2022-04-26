@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react'
 import { Box, Grid, Modal } from '@mui/material'
 import Persona from './PersonaComponent'
 import PersonaProfiles from './PersonaProfiles'
-import {useAppDispatch, useAppSelector} from '../../redux/hooks'
-import {fetchSurveySubmitAsync} from '../../redux/survey/survey-slice'
+import { useAppDispatch, useAppSelector } from '../../redux/hooks'
+import { fetchSurveySubmitAsync } from '../../redux/survey/survey-slice'
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../reusable/Navbar'
 
