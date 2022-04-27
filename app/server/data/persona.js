@@ -6,28 +6,31 @@ const personas = [
         name: "concerned-executive",
     },
     {
-        name: "head-of-the-division",
+        name: "executive",
     },
     {
-        name: "data-loving-analyst",
+        name: "head_of_division",
     },
     {
-        name: "overbooked-manager",
+        name: "data_analyst",
     },
     {
-        name: "lost-employee",
+        name: "learning_manager",
     },
     {
-        name: "learning-manager",
+        name: "employee",
     },
     {
-        name: "workforce-planner",
+        name: "manager",
     },
     {
-        name: "generalist-hr-manager",
+        name: "workforce_planner",
     },
     {
-        name: "automation-engineer",
+        name: "hr_manager",
+    },
+    {
+        name: "automation_engineer",
     },
 ];
 

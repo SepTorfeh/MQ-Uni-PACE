@@ -1,13 +1,14 @@
-import React from 'react';
 import styled from 'styled-components';
-import { mobileMaxWidth } from '../reusable/screenSize';
 import { StyledH1, StyledSubHeading } from '../reusable/Heading';
 import StyledInputComponent from '../reusable/StyledInputComponent';
-import {LoginButton} from '../reusable/Button';
-import { useAppDispatch, useAppSelector } from '../../hooks';
-import { useState } from "react";
-import {RootState} from '../../store';
-import { login } from "../../actions/userAction";
+import { LoginButton } from '../reusable/Button';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import { FormEvent, useState, useEffect } from "react";
+import { fetchUserLoginAsync } from "../../redux/login/login-slice";
+import { useNavigate } from 'react-router-dom';
+import Alert from '@mui/material/Alert';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 
 const StyledLoginForm = styled.form`
     width: 100%;
@@ -38,22 +39,32 @@ const StyledLoginFormHeading = styled.div`
 `
 
 const LoginForm = () => {
-    //const [email, setEmail] = useState<string>("");
-    //const [password, setPassword] = useState<string>("");
+    let navigate = useNavigate();
 
-//    const dispatch = useAppDispatch();
+    const loading = useAppSelector(state => state.login.loading);
+    const error = useAppSelector(state => state.login.error);
+    const isAuthenticated = useAppSelector(state => !!state.login.token);
 
-    //const userLogin = useAppSelector((state: RootState) => state.userLogin);
-    //const { loading, error, userInfo } = userLogin;
-    
-  //  const submitHandler = (e) => {
-//        e.preventDefault();
- //       dispatch(login(email, password));
- //   };
+    const [username, setUsername] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
+
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        if (isAuthenticated) {
+            navigate("/survey");
+        }
+    }, [isAuthenticated]);
+
+    const submitHandler = (e: FormEvent) => {
+        e.preventDefault();
+        dispatch(fetchUserLoginAsync({username, password}));
+    };
 
     return (
             <StyledLoginFormWrapper>
-               
+                {loading && <Box sx={{display:'flex'}}><CircularProgress/></Box>}
+                {error && <Alert severity="error">{error}</Alert>}
                 <StyledLoginFormHeading>
                     <StyledH1>Welcome</StyledH1>
                     <StyledSubHeading>
@@ -61,13 +72,14 @@ const LoginForm = () => {
                     </StyledSubHeading>                   
                 </StyledLoginFormHeading>               
 
-                <StyledLoginForm>
+                <StyledLoginForm onSubmit={submitHandler} >
 
                     <StyledInputComponent 
                         label="Email Address" 
                         placeHolder="Type in email address"
                         inputType="email"
                         name="email"
+                        func={setUsername}
                         />
 
                     <StyledInputComponent 
@@ -75,9 +87,10 @@ const LoginForm = () => {
                         placeHolder="Type in password"
                         inputType="password"
                         name="password"
+                        func={setPassword}
                         />
                     
-                    <LoginButton txt="Log in"/>
+                    <LoginButton txt="Log in" />
 
                 </StyledLoginForm>
 

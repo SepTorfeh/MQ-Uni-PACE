@@ -1,0 +1,51 @@
+.login-page {
+    background: white;
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 60% 40%;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-height: 100vh;
+    
+}
+.box.image {
+    background: rgb(243, 246, 248);
+}
+.box.login-form {
+    padding: 0em 3em;
+}
+
+.landing-img {
+    width: 100%;
+    margin-top: auto;
+    align-self: flex-end;
+    overflow: hidden;
+}
+.landing-logo {
+    position: absolute;
+    top: 32px;
+    left: 40px;
+    height: 40px;
+}
+
+.input:hover {
+    border: 1px solid rgb(58, 88, 98);
+}
+
+@media (max-width: 1080px){
+    .login-page {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        height: 100vh;
+    }
+    .landing-img {
+        height: 40vh;
+    }
+}
