@@ -20,6 +20,7 @@
   - [Env Variables](#env-variables)
   - [Install Dependencies (frontend & backend)](#install-dependencies-frontend--backend)
   - [Run](#run)
+  - [Run with Docker](#run-with-docker)
   - [Seed Database](#seed-database)
 - [Project Layout](#project-layout)
   - [Front-end layout](#front-end-layout)
@@ -82,6 +83,20 @@ npm run server
 npm run client
 
 ```
+
+### Run with Docker
+```
+# Run fronted (:3000)
+cd client
+docker build -t client .
+docker run -it -p 4001:3000 client
+
+# Run backend (:3001)
+docker build -t server .
+docker run -it -p 4002:3001 server
+
+```
+
 
 **Note**: for seeding the data, you should destroy data first then import them.
 

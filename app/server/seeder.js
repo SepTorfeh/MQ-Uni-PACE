@@ -13,8 +13,14 @@ const importData = async () => {
         await User.deleteMany();
         await Persona.deleteMany();
 
-        await Persona.insertMany(persona);
-        await User.insertMany(users);
+        const personas = await Persona.insertMany(persona);
+        const p = personas[0]._id;
+
+        const userAddedPersona = users.map((user) => {
+            return {...user, persona: p}
+        });
+
+        await User.insertMany(userAddedPersona);
 
         console.log("Data imported!!");
         process.exit();
