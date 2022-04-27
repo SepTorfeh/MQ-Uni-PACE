@@ -1,3 +1,50 @@
+/* https://codepen.io/edeesims/pen/wvpYWW */
+
+.card {
+    background: #e2e2e2;
+    display: flex;
+    height: 100%;
+    width: 90%;
+    align-items: center;
+    border-radius: 0.5em;
+    perspective: 500px;
+    padding: 0em 2em;
+    font-family: inherit;
+}
+.content {
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 1em;
+}
+.card:hover .content {
+    transform: rotateY(180deg) ;
+    transition: transform 0.8s;
+}
+.front,
+.back {
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+}
+.back {
+    position: absolute;
+    transform: rotateY(180deg);
+}
+.icon {
+    padding: 0px 3em 0px 0px;
+    height: 12vh;
+}
+.title {
+    font-weight: bold;
+    padding-bottom: 0.5em;
+    font-size: 1.1em;
+}
+
+
+/*
 .persona {
     background: #e2e2e2;
     display: flex;
@@ -16,5 +63,5 @@
     font-size: 1.1em;
 }
 .desc {
-    /* Nothing needed for now */
 }
+*/

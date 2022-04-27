@@ -16,11 +16,27 @@ const Persona = ({ id, title, desc, icon, highlight, setHighlight }: prop) => {
     const borderThickness = '0.2em'
 
     if (highlight) {
-        border = { border: borderThickness + ' solid #4FB4AC' }
+        border = { border: borderThickness + ' solid #092E3B', background: '#ababab' }
     } else {
         border = { border: borderThickness + ' solid #989898' }
     }
 
+    return (
+        <Grid item xs={12} sm={12} md={6} lg={4}>
+            <div id={id} className="card" onClick={setHighlight} style={border}>
+                <div className="content">
+                    <div className="front">
+                        <img src={icon} className="icon" />
+                        <div className="title">{title}</div>
+                    </div>
+                    <div className="back">
+                        <div>{desc}</div>
+                    </div>
+                </div>
+            </div>
+        </Grid>
+    )
+    /*
     return (
         <Grid item xs={12} sm={12} md={6} lg={4}>
             <div id={id} className="persona" onClick={setHighlight} style={border}>
@@ -32,6 +48,7 @@ const Persona = ({ id, title, desc, icon, highlight, setHighlight }: prop) => {
             </div>
         </Grid>
     )
+    */
 }
 
 export default Persona

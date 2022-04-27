@@ -1,5 +1,4 @@
 import '../../styles/survey.css'
-import '../../styles/landing-page.css'
 import '../../styles/animation.css'
 import { useState, useEffect } from 'react'
 import { Box, Grid } from '@mui/material'
@@ -59,7 +58,7 @@ const SurveyWrapper = () => {
                 <CustomModal error state={open} handleClose={handleClose} content="Please select a persona!" />
 
                 <Box sx={{ flexGrow: 1 }} style={{ margin:'2em 0em 3em' }}>
-                    <Grid container rowSpacing={{ xs: 1, sm: 3, md: 5 }} columnSpacing={{ xs: 0.5, sm: 2, md: 3 }}>
+                    <Grid container rowSpacing={{ xs: 5 }} columnSpacing={{ xs: 5 }}>
                         {personas.map(p =>
                             <Persona
                                 key={p.id}
