@@ -19,6 +19,7 @@ const submit = asyncHandler(async (req, res) => {
         if (user) {
             res.status(200).json({
                 email: updatedUser.email,
+                name: updatedUser.name,
                 persona: updatedUser.persona,
                 token: generateToken(user._id),
             });
