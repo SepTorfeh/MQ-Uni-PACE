@@ -2,17 +2,34 @@ import '../../styles/index.css'
 
 const Navbar = () => {
 
+    // Faethm logo
     const logo = 'image/logo_white.svg'
-
-    const name = JSON.parse(localStorage.getItem('userInfo') || '{}').name.split(' ')
+    
+    const user = localStorage.getItem('userInfo')
     let initials
-    name.length > 1 ? initials = name.shift().charAt(0) + name.pop().charAt(0) : initials = name.shift().charAt(0)
-    initials = initials.toUpperCase()
+
+    // Use name for user-icon
+    if (user) {
+        const name = JSON.parse(user || '{}').name.split(' ')
+        name.length > 1 ? initials = name.shift().charAt(0) + name.pop().charAt(0) : initials = name.shift().charAt(0)
+        initials = initials.toUpperCase()
+    }
+
+    // Logout
+    const logout = () => {
+        alert('Need to remove "userInfo" from Local Storage and redirect to login page')
+        // localStorage.removeItem('userInfo')
+    }
 
     return (
         <div className="navbar">
             <img src={logo} />
-            <div className="user-circle">{initials}</div>
+            <div className="dropdown-menu">
+                <div className="user-circle">{initials}</div>
+                <div className="dropdown-content dropdown-bar">
+                    <a onClick={() => logout()} className="dropdown-item dropdown-button">Logout</a>
+                </div>
+            </div>
         </div>
     )
 

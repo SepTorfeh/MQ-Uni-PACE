@@ -1,6 +1,5 @@
 .persona {
-    background: #E2E2E2;
-    border: 0.15em solid #989898;
+    background: #e2e2e2;
     display: flex;
     padding: 0.5em 2em;
     height: 100%;
@@ -28,14 +27,14 @@
 
     float: right;
     border: 0px;
-    background: #4FB4AC;
+    background: #00b5ac;
     color: white;
     width: 15em;
     height: 2.5em;
     border-radius: 0.5em;
 }
 .button:hover {
-    background: #33C4BD;
+    background: #33c4bd;
     cursor: pointer;
 }
 
@@ -47,7 +46,7 @@
     transform: translate(-50%, -50%);
     width: 400px;
     height: auto;
-    background: #E2E2E2;
+    background: #e2e2e2;
     border-radius: 0.5em;
     box-shadow: 0 10px 20px rgba(0,0,0,0.5);
     padding: 1.5em 2em;

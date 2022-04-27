@@ -13,10 +13,12 @@ const Persona = ({ id, title, desc, icon, highlight, setHighlight }: prop) => {
 
     let border = {}
 
+    const borderThickness = '0.2em'
+
     if (highlight) {
-        border = { border: '0.15em solid #4FB4AC' }
+        border = { border: borderThickness + ' solid #4FB4AC' }
     } else {
-        border = { border: '0.15em solid #989898' }
+        border = { border: borderThickness + ' solid #989898' }
     }
 
     return (
