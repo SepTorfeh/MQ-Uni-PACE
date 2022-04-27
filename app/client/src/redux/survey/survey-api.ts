@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, {AxiosError} from "axios";
 // A function handling an async survey submit
 export const fetchSurveySubmit = async (persona: string) => {
 
@@ -15,14 +15,18 @@ export const fetchSurveySubmit = async (persona: string) => {
         },
     };
 
-
-    const {data} = await axios.post('/api/survey/submit', {persona}, config);
-
-    if (data) {
+    try {
+        const {data} = await axios.post('/api/survey/submit', {persona}, config);
         localStorage.setItem("userInfo", JSON.stringify(data));
         return data.persona;
-    } else {
-        return Promise.reject(data);
+    } catch (e) {
+        if ((<any>e).isAxiosError) {
+            const err = <AxiosError>e;
+            return Promise.reject(err.response?.data.message);
+        } else {
+            return Promise.reject(e);
+        }
     }
+
 };
 
