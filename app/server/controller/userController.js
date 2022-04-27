@@ -13,6 +13,7 @@ const login = asyncHandler(async (req, res) => {
     if (user && (await user.matchPassword(password))) {
         const persona = await Persona.findById(user.persona);
         res.json({
+            name: user.name,
             email: user.email,
             persona: persona.name,
             token: generateToken(user._id),

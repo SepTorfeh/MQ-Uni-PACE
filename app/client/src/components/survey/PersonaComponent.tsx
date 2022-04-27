@@ -32,4 +32,4 @@ const Persona = ({ id, title, desc, icon, highlight, setHighlight }: prop) => {
     )
 }
 
-export default Persona;
+export default Persona

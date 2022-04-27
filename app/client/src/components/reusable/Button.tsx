@@ -33,6 +33,6 @@ const StyledLoginButton = styled.button`
 
 export const LoginButton = ({txt}:{txt:string;}) => {
     return (
-        <StyledLoginButton type="submit" className="button" >{txt}</StyledLoginButton>
+        <StyledLoginButton type="submit" className="button" tabIndex={-1} >{txt}</StyledLoginButton>
     )
 }

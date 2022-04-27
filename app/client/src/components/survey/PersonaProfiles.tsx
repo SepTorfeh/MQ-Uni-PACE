@@ -63,9 +63,7 @@ const personaProfiles = [
         desc: 'An automation engineer is someone who delivers automated solutions and software processes. They work closely with other teams to discover and remove any problems by implementing process automation.',
         icon: icons.automation_engineer,
         highlight: false
-    },
-
-    
+    },    
 ]
 
 export default personaProfiles
