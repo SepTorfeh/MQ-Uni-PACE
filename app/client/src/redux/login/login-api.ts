@@ -16,7 +16,7 @@ export const fetchUserLogin = async (username: string, password: string) => {
 
         if (data) {
             localStorage.setItem("userInfo", JSON.stringify(data));
-            return data;
+            return data.token;
         } else {
             return Promise.reject(data);
         }
