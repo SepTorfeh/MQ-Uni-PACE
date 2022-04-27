@@ -32,7 +32,7 @@ const SurveyWrapper = () => {
             navigate("/");
         }
         setPersonas(PersonaProfiles)
-    }, [])
+    }, [isAuthenticated])
 
     const highlight = (id: string) => {
         const persona = personas.find(p => p.id === id)

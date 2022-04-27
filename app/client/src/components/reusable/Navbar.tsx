@@ -1,7 +1,10 @@
 import '../../styles/index.css'
+import { useAppDispatch } from '../../redux/hooks'
+import { updateToken } from '../../redux/login/login-slice'
 
 const Navbar = () => {
 
+    const dispatch = useAppDispatch();
     // Faethm logo
     const logo = 'image/logo_white.svg'
     
@@ -17,8 +20,9 @@ const Navbar = () => {
 
     // Logout
     const logout = () => {
-        alert('Need to remove "userInfo" from Local Storage and redirect to login page')
-        // localStorage.removeItem('userInfo')
+        //alert('Need to remove "userInfo" from Local Storage and redirect to login page')
+        localStorage.removeItem('userInfo')
+        dispatch(updateToken(""));
     }
 
     return (
