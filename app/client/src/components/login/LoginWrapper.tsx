@@ -12,8 +12,8 @@ const LoginWrapper = () => {
     return (
         <div className="login-page">
             <div className="box image">
-                <img src={logo} className="landing-logo" />
-                <img src={image} className="landing-img" />
+                <img src={logo} className="login-logo" />
+                <img src={image} className="login-img" />
             </div>
             <div className="box login-form"><LoginForm /></div>
         </div>

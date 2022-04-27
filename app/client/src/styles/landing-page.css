@@ -1,0 +1,33 @@
+.landing-page {
+    background: #092E3B;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.landing-title {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    padding: 0em 20vw;
+    color: white;
+    font-size: 2em;
+}
+.left {
+    display: flex;
+    justify-content: flex-start;
+}
+.right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: auto;
+}
+.landing-image {
+    width: 80%;
+}

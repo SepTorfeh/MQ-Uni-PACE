@@ -52,7 +52,7 @@ const LoginForm = () => {
 
     useEffect(() => {
         if (isAuthenticated) {
-            navigate("/survey");
+            navigate("/landing-page");
         }
     }, [isAuthenticated]);
 

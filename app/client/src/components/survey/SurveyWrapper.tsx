@@ -1,15 +1,15 @@
 import '../../styles/survey.css'
+import '../../styles/landing-page.css'
+import '../../styles/animation.css'
 import { useState, useEffect } from 'react'
-import { Box, Grid, Modal } from '@mui/material'
+import { Box, Grid } from '@mui/material'
 import Persona from './PersonaComponent'
 import PersonaProfiles from './PersonaProfiles'
 import { useAppDispatch, useAppSelector } from '../../redux/hooks'
 import { fetchSurveySubmitAsync } from '../../redux/survey/survey-slice'
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../reusable/Navbar'
-
-const warning = 'image/icons/warning.svg'
-const close = 'image/icons/close.svg'
+import CustomModal from '../reusable/CustomModal'
 
 const SurveyWrapper = () => {
     let navigate = useNavigate();
@@ -47,6 +47,8 @@ const SurveyWrapper = () => {
         selectedPersona ? dispatch(fetchSurveySubmitAsync({ persona })) : handleOpen()
     }
 
+    const landing_image = 'image/landing_image.svg'
+   
     return (
         <div className="page">
             <Navbar />
@@ -54,13 +56,7 @@ const SurveyWrapper = () => {
                 <div className="title">Help us customise your experience!</div>
                 <div className="desc">Please select which <u>category</u> best describes you.</div>
 
-                <Modal open={open} onClose={handleClose}>
-                    <Box className="modal">
-                        <div className="modal-title"><img src={warning} className="modal-title-image" />Warning</div>
-                        <div className="modal-content">Please select a persona!</div>
-                        <img src={close} className="modal-close" onClick={handleClose} />
-                    </Box>
-                </Modal>
+                <CustomModal error state={open} handleClose={handleClose} content="Please select a persona!" />
 
                 <Box sx={{ flexGrow: 1 }} style={{ margin:'2em 0em 3em' }}>
                     <Grid container rowSpacing={{ xs: 1, sm: 3, md: 5 }} columnSpacing={{ xs: 0.5, sm: 2, md: 3 }}>
@@ -80,7 +76,6 @@ const SurveyWrapper = () => {
             </div>
         </div>
     )
-
 }
 
 export default SurveyWrapper
