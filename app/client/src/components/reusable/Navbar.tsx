@@ -1,6 +1,6 @@
 import '../../styles/index.css'
 import { useAppDispatch } from '../../redux/hooks'
-import { updateToken } from '../../redux/login/login-slice'
+import { updateToken, updateUserName } from '../../redux/login/login-slice'
 
 const Navbar = () => {
 
@@ -23,6 +23,7 @@ const Navbar = () => {
         //alert('Need to remove "userInfo" from Local Storage and redirect to login page')
         localStorage.removeItem('userInfo')
         dispatch(updateToken(""));
+        dispatch(updateUserName(""));
     }
 
     return (
