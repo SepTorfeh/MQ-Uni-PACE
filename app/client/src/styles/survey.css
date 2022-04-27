@@ -1,9 +1,10 @@
 .persona {
-    background: #e2e2e2;
+    background: #f3f6f8;
     display: flex;
     padding: 0.5em 2em;
     height: 100%;
     align-items: center;
+    border-radius: 0.5em;
 }
 .icon {
     padding: 0px 3em 0px 0px;
@@ -12,6 +13,7 @@
 .title {
     font-weight: bold;
     padding-bottom: 0.5em;
+    font-size: 1.1em;
 }
 .desc {
     /* Nothing needed for now */
