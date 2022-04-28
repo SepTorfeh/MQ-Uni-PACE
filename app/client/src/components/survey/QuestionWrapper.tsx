@@ -1,14 +1,21 @@
 import '../../styles/question.css'
-import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Navbar from '../reusable/Navbar'
 import QuestionComponent from './QuestionComponent'
-import QuestionList from './QuestionList'
+import { useAppDispatch, useAppSelector } from '../../redux/hooks'
+import { useNavigate } from 'react-router-dom'
 
 
 const QuestionWrapper = () => {
 
     const navigate = useNavigate()
+    const isAuthenticated = useAppSelector(state => !!state.login.token)
+
+    useEffect(() => {
+        if(!isAuthenticated){
+            navigate('/');
+        }
+    }, [isAuthenticated]) // eslint-disable-line react-hooks/exhaustive-deps
 
     const [data, setData] = useState<any[]>([])
 

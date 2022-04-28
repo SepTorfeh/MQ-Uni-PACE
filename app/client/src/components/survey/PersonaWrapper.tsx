@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { Box, Grid } from '@mui/material'
 import Persona from './PersonaComponent'
 import PersonaProfiles from './PersonaProfiles'
-import { useAppDispatch } from '../../redux/hooks'
+import { useAppDispatch, useAppSelector } from '../../redux/hooks'
 import { fetchSurveySubmitAsync } from '../../redux/survey/survey-slice'
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../reusable/Navbar'
@@ -13,9 +13,7 @@ import CustomModal from '../reusable/CustomModal'
 const PersonaWrapper = () => {
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
-    // Uncomment this when you're done - lance
-    //const isAuthenticated = useAppSelector(state => !!state.login.token);
-    const isAuthenticated = true;
+    const isAuthenticated = useAppSelector(state => !!state.login.token);
 
     const [personas, setPersonas] = useState<any[]>([])
     const [selectedPersona, setSelectedPersona] = useState('')
@@ -39,7 +37,6 @@ const PersonaWrapper = () => {
 
     const next = () => {
         const persona: string = selectedPersona;
-        // Uncomment this when you're done - lance
         selectedPersona ? dispatch(fetchSurveySubmitAsync({ persona })) : handleOpen()
         navigate('/question')
     }
