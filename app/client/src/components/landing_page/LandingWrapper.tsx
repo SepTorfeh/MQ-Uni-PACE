@@ -1,20 +1,19 @@
 import '../../styles/landing-page.css'
 import '../../styles/animation.css'
-import { useState, useEffect } from 'react'
-import { useAppDispatch, useAppSelector } from '../../redux/hooks'
-import { fetchSurveySubmitAsync } from '../../redux/survey/survey-slice'
+import { useEffect } from 'react'
+import { useAppSelector } from '../../redux/hooks'
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../reusable/Navbar'
 
 const LandingWrapper = () => {
-    let navigate = useNavigate();
+    const navigate = useNavigate();
 
     //will be used to show errors or spinner for async func call
     const isAuthenticated = useAppSelector(state => !!state.login.token);
 
     useEffect(() => {
         if(!isAuthenticated){
-            navigate("/");
+            navigate('/');
         }
     }, [isAuthenticated])
 
