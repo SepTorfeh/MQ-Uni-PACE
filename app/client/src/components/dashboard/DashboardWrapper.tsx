@@ -1,5 +1,5 @@
 import '../../styles/animation.css'
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import Navbar from '../reusable/Navbar'
 import { useAppSelector } from '../../redux/hooks'
 import { useNavigate } from 'react-router-dom'
@@ -12,9 +12,9 @@ const DashboardWrapper = () => {
 
     useEffect(() => {
         if(!isAuthenticated){
-            navigate('/');
+            navigate('/')
         }
-    }, [isAuthenticated]) // eslint-disable-line react-hooks/exhaustive-deps
+    }, [isAuthenticated])
 
     return (
         <div className="page">

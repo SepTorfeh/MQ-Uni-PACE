@@ -13,7 +13,7 @@ const LoadingWrapper = () => {
 
     useEffect(() => {
         if(!isAuthenticated){
-            navigate('/');
+            navigate('/')
         }
     }, [isAuthenticated])
 
@@ -22,7 +22,7 @@ const LoadingWrapper = () => {
             navigate('/dashboard')
         }, 2000)
         return () => clearTimeout(timer);
-    }, []);
+    }, [])
     
     const loader = 'image/icons/loader.svg'
 

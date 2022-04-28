@@ -13,7 +13,7 @@ const QuestionWrapper = () => {
 
     useEffect(() => {
         if(!isAuthenticated){
-            navigate('/');
+            navigate('/')
         }
     }, [isAuthenticated]) // eslint-disable-line react-hooks/exhaustive-deps
 

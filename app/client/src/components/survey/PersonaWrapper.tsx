@@ -23,10 +23,10 @@ const PersonaWrapper = () => {
 
     useEffect(() => {
         if(!isAuthenticated){
-            navigate('/');
+            navigate('/')
         }
         setPersonas(PersonaProfiles)
-    }, [isAuthenticated]) // eslint-disable-line react-hooks/exhaustive-deps
+    }, [isAuthenticated])
 
     const highlight = (id: string) => {
         const persona = personas.find(p => p.id === id)

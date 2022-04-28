@@ -24,7 +24,7 @@ const Persona = ({ id, title, desc, icon, highlight, setHighlight }: prop) => {
             <div id={id} className="card" onClick={setHighlight} style={border}>
                 <div className="content">
                     <div className="front">
-                        <img src={icon} className="icon" alt={icon} />
+                        <img src={icon} className="icon" />
                         <div className="title">{title}</div>
                     </div>
                     <div className="back">
