@@ -4,19 +4,6 @@
     -webkit-animation-duration: 1s;
     -webkit-animation-fill-mode: both;
 }
-.delay-1 {
-    animation-delay: 1s;
-}
-.delay-3 {
-    animation-delay: 3s;
-}
-.delay-6 {
-    animation-delay: 6s;
-}
-.delay-9 {
-    animation-delay: 9s;
-}
-
 
 @keyframes fadeInDown {
     from {

@@ -12,11 +12,9 @@ type prop = {
 const Persona = ({ id, title, desc, icon, highlight, setHighlight }: prop) => {
 
     let border = {}
-
     const borderThickness = '0.2em'
-
     if (highlight) {
-        border = { border: borderThickness + ' solid #092E3B', background: '#ababab' }
+        border = { border: borderThickness + ' solid #092E3B', background: '#c2c2c2' }
     } else {
         border = { border: borderThickness + ' solid #989898' }
     }
@@ -26,7 +24,7 @@ const Persona = ({ id, title, desc, icon, highlight, setHighlight }: prop) => {
             <div id={id} className="card" onClick={setHighlight} style={border}>
                 <div className="content">
                     <div className="front">
-                        <img src={icon} className="icon" />
+                        <img src={icon} className="icon" alt={icon} />
                         <div className="title">{title}</div>
                     </div>
                     <div className="back">

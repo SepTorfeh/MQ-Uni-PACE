@@ -1,5 +1,8 @@
+/******************************
+            Page
+******************************/
 .page {
-    background: #F1F3F7;
+    background: #f1f3f7;
     min-height: 100vh;
     font-size: 0.9em;
     
@@ -14,11 +17,21 @@
 .container {
     padding: 3em 4em;
     height: 100%;
-    display: inline-block;
     font-family: inherit;
 }
+/* Disable image dragging */
+img {
+    user-drag: none;
+	-webkit-user-drag: none;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
 
-
+/******************************
+            Navbar
+******************************/
 .navbar {
     background: #092E3B;
     color: white;
@@ -40,7 +53,9 @@
     font-size: 1.2em;
 }
 
-
+/******************************
+        Navbar Dropdown
+******************************/
 .dropdown-menu {
     position: relative;
     display: inline-block;
@@ -92,6 +107,9 @@
 }
 
 
+/******************************
+            Button
+******************************/
 .button {
     /* Reset appearance */
     appearance: none;
@@ -99,21 +117,18 @@
 	-khtml-appearance: none;
 	-moz-appearance: none;
 	-ms-appearance: none;
-
-    float: right;
     border: 0px;
-    background: #00b5ac;
-    color: white;
-    width: 15em;
-    height: 2.5em;
     border-radius: 0.5em;
     font-family: inherit;
 }
 .button:hover {
-    background: #33c4bd;
     cursor: pointer;
 }
 
+
+/******************************
+            Modal
+******************************/
 /* https://codepen.io/NielsVoogt/pen/XWjPdjO */
 .modal {
     position: absolute;
@@ -148,12 +163,33 @@
     /* Nothing needed for now */
 }
 
-/* Disable image dragging */
-img {
-    user-drag: none;
-	-webkit-user-drag: none;
-	user-select: none;
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
+
+/******************************
+            Options
+******************************/
+.float-right {
+    float: right;
+}
+.delay-1 {
+    animation-delay: 1s;
+}
+.delay-3 {
+    animation-delay: 3s;
+}
+.delay-6 {
+    animation-delay: 6s;
+}
+.delay-9 {
+    animation-delay: 9s;
+}
+.grey {
+    background: grey;
+}
+.grey:hover {
+    background: black;
+}
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

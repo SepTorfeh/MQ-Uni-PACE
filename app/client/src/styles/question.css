@@ -1,0 +1,19 @@
+.question {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+.option {
+    margin-bottom: 2em;
+}
+
+.option button {
+    width: 30%;
+    height: 5vh;
+    background: white;
+    border: 2px solid #e7ebec;
+}
+.option button:hover {
+    background: #e7ebec;
+}

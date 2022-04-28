@@ -1,37 +1,34 @@
-import '../../styles/survey.css'
+import '../../styles/persona.css'
 import '../../styles/animation.css'
 import { useState, useEffect } from 'react'
 import { Box, Grid } from '@mui/material'
 import Persona from './PersonaComponent'
 import PersonaProfiles from './PersonaProfiles'
-import { useAppDispatch, useAppSelector } from '../../redux/hooks'
+import { useAppDispatch } from '../../redux/hooks'
 import { fetchSurveySubmitAsync } from '../../redux/survey/survey-slice'
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../reusable/Navbar'
 import CustomModal from '../reusable/CustomModal'
 
-const SurveyWrapper = () => {
-    let navigate = useNavigate();
-    
-    const loading = useAppSelector(state => state.survey.loading);
-    const error = useAppSelector(state => state.survey.error);
-    //will be used to show errors or spinner for async func call
-    const isAuthenticated = useAppSelector(state => !!state.login.token);
+const PersonaWrapper = () => {
+    const navigate = useNavigate();
+    const dispatch = useAppDispatch();
+    // Uncomment this when you're done - lance
+    //const isAuthenticated = useAppSelector(state => !!state.login.token);
+    const isAuthenticated = true;
 
     const [personas, setPersonas] = useState<any[]>([])
     const [selectedPersona, setSelectedPersona] = useState('')
     const [open, setOpen] = useState(false)
     const handleOpen = () => setOpen(true)
     const handleClose = () => setOpen(false)
-    
-    const dispatch = useAppDispatch();
 
     useEffect(() => {
         if(!isAuthenticated){
-            navigate("/");
+            navigate('/');
         }
         setPersonas(PersonaProfiles)
-    }, [isAuthenticated])
+    }, [isAuthenticated]) // eslint-disable-line react-hooks/exhaustive-deps
 
     const highlight = (id: string) => {
         const persona = personas.find(p => p.id === id)
@@ -40,13 +37,12 @@ const SurveyWrapper = () => {
         id === selectedPersona ? setSelectedPersona('') : setSelectedPersona(id)
     }
 
-    const submit = () => {
-        //selectedPersona ? console.log(selectedPersona) : handleOpen()
+    const next = () => {
         const persona: string = selectedPersona;
+        // Uncomment this when you're done - lance
         selectedPersona ? dispatch(fetchSurveySubmitAsync({ persona })) : handleOpen()
+        navigate('/question')
     }
-
-    const landing_image = 'image/landing_image.svg'
    
     return (
         <div className="page">
@@ -71,10 +67,10 @@ const SurveyWrapper = () => {
                         )}
                     </Grid>
                 </Box>
-                <button type="button" className="button" onClick={() => submit()} tabIndex={-1}>Submit</button>
+                <button type="button" className="button green-button float-right" onClick={() => next()} tabIndex={-1}>Next</button>
             </div>
         </div>
     )
 }
 
-export default SurveyWrapper
+export default PersonaWrapper

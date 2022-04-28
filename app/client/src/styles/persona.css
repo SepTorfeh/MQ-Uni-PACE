@@ -42,6 +42,15 @@
     padding-bottom: 0.5em;
     font-size: 1.1em;
 }
+.green-button {
+    background: #00b5ac;
+    color: white;
+    width: 15em;
+    height: 2.5em;
+}
+.green-button:hover {
+    background: #33c4bd;
+}
 
 
 /*
