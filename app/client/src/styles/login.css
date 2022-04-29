@@ -16,9 +16,6 @@
 .box.image {
     background: rgb(243, 246, 248);
 }
-.box.login-form {
-    padding: 0em 3em;
-}
 
 .login-img {
     width: 100%;
@@ -33,9 +30,63 @@
     height: 40px;
 }
 
-.input:hover {
-    border: 1px solid rgb(58, 88, 98);
+/* Added section for login form */
+.login-form {
+    gap: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    width: 75%;
 }
+.login-text {
+    disply: block;
+    color: #092e3b;
+}
+.login-heading {
+    font-size: 40px;
+    letter-spacing: 0px;
+    margin-bottom: 16px;
+}
+.form {
+    width: 100%;
+}
+.form-input {
+    margin-bottom: 24px;
+    width: 100%;
+}
+.form label {
+    color: #6b8289;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.form input {
+    background: #fafbfb;
+    border: 1px solid rgb(206, 213, 216);
+    color: rgb(58, 88, 98);
+    border-radius: 4px;
+    line-height: 24px;
+    padding: 10px 16px;
+    font-size: 16px;
+    transition: 0.3s;
+    color: #3a5862;
+    box-sizing: border-box;
+    width: 100%;
+}
+.form input::placeholder {
+    color: #aab3b9;
+}
+.form input:focus {
+    outline: none;
+}
+.form input:hover {
+    border: 1px solid #3a5862;
+}
+/* End section for login form */
 
 @media (max-width: 1080px){
     .login-page {
@@ -46,5 +97,8 @@
     }
     .landing-img {
         height: 40vh;
+    }
+    .login-form {
+        padding: 32px 24px;
     }
 }

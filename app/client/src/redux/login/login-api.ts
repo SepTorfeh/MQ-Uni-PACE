@@ -27,6 +27,6 @@ export const fetchUserLogin = async (username: string, password: string) => {
             }
         }
     } else {
-        return Promise.reject("Please enter valiad username and password");
+        return Promise.reject("Please enter valid username and password");
     }
 };

@@ -37,8 +37,13 @@ const PersonaWrapper = () => {
 
     const next = () => {
         const persona: string = selectedPersona;
-        selectedPersona ? dispatch(fetchSurveySubmitAsync({ persona })) : handleOpen()
-        navigate('/question')
+        console.log(persona)
+        if (selectedPersona) {
+            dispatch(fetchSurveySubmitAsync({ persona }))
+            navigate('/question')
+        } else {
+            handleOpen()
+        }
     }
    
     return (

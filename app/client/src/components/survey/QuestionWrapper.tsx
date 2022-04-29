@@ -11,6 +11,7 @@ const QuestionWrapper = () => {
     const navigate = useNavigate()
     const isAuthenticated = useAppSelector(state => !!state.login.token)
 
+    const [data, setData] = useState<any[]>([])
     const [open, setOpen] = useState(false)
     const handleOpen = () => setOpen(true)
     const handleClose = () => setOpen(false)
@@ -19,9 +20,7 @@ const QuestionWrapper = () => {
         if(!isAuthenticated){
             navigate('/')
         }
-    }, [isAuthenticated]) // eslint-disable-line react-hooks/exhaustive-deps
-
-    const [data, setData] = useState<any[]>([])
+    }, [isAuthenticated])
 
     // Please pass data to the db - Lance
     const submit = () => {

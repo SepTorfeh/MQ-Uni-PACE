@@ -19,15 +19,6 @@
     height: 100%;
     font-family: inherit;
 }
-/* Disable image dragging */
-img {
-    user-drag: none;
-	-webkit-user-drag: none;
-	user-select: none;
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-}
 
 /******************************
             Navbar
@@ -120,9 +111,24 @@ img {
     border: 0px;
     border-radius: 0.5em;
     font-family: inherit;
+    transition: 0.3s;
+    padding: 1.5em 0em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .button:hover {
     cursor: pointer;
+}
+.green-button {
+    background: #00b5ac;
+    color: white;
+    width: 15em;
+    height: 1em;
+}
+.green-button:hover {
+    background: #33c4bd;
 }
 
 
@@ -182,14 +188,11 @@ img {
 .delay-9 {
     animation-delay: 9s;
 }
-.grey {
-    background: grey;
-}
-.grey:hover {
-    background: black;
-}
 .flex {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+.full-width {
+    width: 100%;
 }
