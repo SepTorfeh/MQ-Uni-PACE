@@ -27,9 +27,10 @@ export const fetchSurveySubmitAsync = createAsyncThunk(
     //1. action lifecircle prefix
     "survey/fetchSurveySubmit",
     //2. payload creator
-    async (surveyPayload: {persona: string;}) => {
+    async (surveyPayload: {persona: string; data: any;}) => {
         const response = await fetchSurveySubmit(
             surveyPayload.persona,
+            surveyPayload.data,
         );
         // The value we return becomes the action payload
         return response;

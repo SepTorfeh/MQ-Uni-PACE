@@ -2,14 +2,17 @@ import '../../styles/question.css'
 import { useState, useEffect } from 'react'
 import Navbar from '../reusable/Navbar'
 import QuestionComponent from './QuestionComponent'
-import { useAppSelector } from '../../redux/hooks'
+import { useAppDispatch, useAppSelector } from '../../redux/hooks'
 import { useNavigate } from 'react-router-dom'
 import CustomModal from '../reusable/CustomModal'
+import {fetchSurveySubmitAsync} from '../../redux/survey/survey-slice'
 
 const QuestionWrapper = () => {
-
+    
+    const dispatch = useAppDispatch();
     const navigate = useNavigate()
     const isAuthenticated = useAppSelector(state => !!state.login.token)
+    const persona = useAppSelector(state => state.survey.persona!);
 
     const [data, setData] = useState<any[]>([])
     const [open, setOpen] = useState(false)
@@ -25,8 +28,14 @@ const QuestionWrapper = () => {
     // Please pass data to the db - Lance
     const submit = () => {
         const validation = !data.some(el => el < 0)
-        console.log(data)
-        validation ? navigate('/loading') : handleOpen()
+        //console.log(data)
+        //validation ? navigate('/loading') : handleOpen()
+        if(validation){
+            dispatch(fetchSurveySubmitAsync({persona, data}));
+            navigate('/loading');
+        } else {
+            handleOpen();
+        }
     }
 
     return (

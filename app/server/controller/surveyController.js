@@ -7,7 +7,8 @@ const generateToken = require("../utils/generateToken");
 // @access  Public
 const submit = asyncHandler(async (req, res) => {
     // need to update the name of the personas on the frontend
-    const {persona} = req.body;
+    const {persona, userData} = req.body;
+    console.log(userData);
     const user = req.user;
     const name = persona;
     const updatedPersona = await Persona.findOne({name});
