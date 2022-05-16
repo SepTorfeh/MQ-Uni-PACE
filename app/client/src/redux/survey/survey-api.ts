@@ -17,8 +17,11 @@ export const fetchSurveySubmit = async (persona: string, userData: any) => {
 
     try {
         const {data} = await axios.post('/api/survey/submit', {persona, userData}, config);
-        localStorage.setItem("userInfo", JSON.stringify(data));
-        return data.persona;
+        // we are not returning user token after submitting the survey for security reseasons
+        // persona in the redux state is updated after form is submitted
+        let userInfo = JSON.parse(localStorage.getItem("userInfo") || '{}');
+        localStorage.setItem("userInfo", JSON.stringify({...userInfo, persona: data.persona.name}));
+        return data.persona.name;
     } catch (e) {
         if ((<any>e).isAxiosError) {
             const err = <AxiosError>e;

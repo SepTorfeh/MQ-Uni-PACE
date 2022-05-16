@@ -18,11 +18,12 @@ const submit = asyncHandler(async (req, res) => {
         const updatedUser = await user.save();
 
         if (user) {
+            // only send persona 
             res.status(200).json({
-                email: updatedUser.email,
-                name: updatedUser.name,
+                //email: updatedUser.email,
+                //name: updatedUser.name,
                 persona: updatedUser.persona,
-                token: generateToken(user._id),
+                //token: generateToken(user._id),
             });
         } else {
             res.status(401);
