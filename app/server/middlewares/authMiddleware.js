@@ -28,7 +28,7 @@ const protect = asyncHandler(async (req, res, next) => {
     }
 
     if (!token) {
-        res.status(401);
+        res.status(404);
         throw new Error("Not authorized, please login again");
     }
 });
