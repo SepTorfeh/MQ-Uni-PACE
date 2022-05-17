@@ -1,6 +1,6 @@
 import '../../styles/index.css'
 import { useAppDispatch, useAppSelector } from '../../redux/hooks'
-import { updateToken, updateUserName } from '../../redux/login/login-slice'
+import { updateFirstName, updateLastName, updateToken, updateUserName } from '../../redux/login/login-slice'
 
 const Navbar = () => {
 
@@ -37,6 +37,8 @@ const Navbar = () => {
         localStorage.removeItem('userInfo')
         dispatch(updateToken(""));
         dispatch(updateUserName(""));
+        dispatch(updateFirstName(""));
+        dispatch(updateLastName(""));
     }
 
     return (
