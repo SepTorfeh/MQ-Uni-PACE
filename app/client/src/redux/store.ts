@@ -12,6 +12,8 @@ const initialState = {
         error: false,
         token: userInfoFromStorage ? userInfoFromStorage.token : "",
         username: userInfoFromStorage ? userInfoFromStorage.email : "",
+        firstName: userInfoFromStorage ? userInfoFromStorage.firstName : "",
+        lastName: userInfoFromStorage ? userInfoFromStorage.lastName : "",
     },
     survey: {
         loading: false,

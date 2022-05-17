@@ -1,5 +1,5 @@
 import '../../styles/index.css'
-import { useAppDispatch } from '../../redux/hooks'
+import { useAppDispatch, useAppSelector } from '../../redux/hooks'
 import { updateToken, updateUserName } from '../../redux/login/login-slice'
 
 const Navbar = () => {
@@ -8,14 +8,27 @@ const Navbar = () => {
     // Faethm logo
     const logo = 'image/logo_white.svg'
     
-    const user = localStorage.getItem('userInfo')
-    let initials
+    //const user = localStorage.getItem('userInfo')
+    //let initials
+
+    //// Use name for user-icon
+    //if (user) {
+        //const name = JSON.parse(user || '{}').name.split(' ')
+        //name.length > 1 ? initials = name.shift().charAt(0) + name.pop().charAt(0) : initials = name.shift().charAt(0)
+        //initials = initials.toUpperCase()
+    //}
 
     // Use name for user-icon
-    if (user) {
-        const name = JSON.parse(user || '{}').name.split(' ')
-        name.length > 1 ? initials = name.shift().charAt(0) + name.pop().charAt(0) : initials = name.shift().charAt(0)
-        initials = initials.toUpperCase()
+    // using redux
+    let initials
+    const firstName = useAppSelector(state => state.login.firstName);
+    const lastName = useAppSelector(state => state.login.lastName);
+
+    if(firstName && lastName){
+        initials = firstName?.charAt(0) + lastName?.charAt(0);
+        initials = initials.toUpperCase();
+    } else {
+        initials = "";
     }
 
     // Logout

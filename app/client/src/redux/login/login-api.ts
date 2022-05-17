@@ -16,7 +16,8 @@ export const fetchUserLogin = async (username: string, password: string) => {
             );
 
             localStorage.setItem("userInfo", JSON.stringify(data));
-            return data.token;
+            //return data.token;
+            return data;
 
         } catch (e) {
             if ((<any>e).isAxiosError) {
