@@ -24,6 +24,11 @@ const userSchema = mongoose.Schema(
             type: mongoose.Schema.Types.ObjectId,
             require: true,
             ref: "Persona",
+        },
+        useCase: {
+            type: mongoose.Schema.Types.ObjectId,
+            require: true,
+            ref: "UseCase",
         }
     },
     {

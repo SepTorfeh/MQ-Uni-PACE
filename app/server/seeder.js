@@ -1,8 +1,10 @@
 const dotenv = require("dotenv");
 const users = require("./data/users");
 const persona = require("./data/persona");
+const use_case = require("./data/use_cases");
 const User = require("./model/userModel");
 const Persona = require("./model/personaModel");
+const UseCase = require("./model/useCaseModel");
 const connectDB = require("./config/db");
 
 dotenv.config();
@@ -12,12 +14,16 @@ const importData = async () => {
     try {
         await User.deleteMany();
         await Persona.deleteMany();
+        await UseCase.deleteMany();
 
         const personas = await Persona.insertMany(persona);
         const p = personas[0]._id;
 
+        const useCases = await UseCase.insertMany(use_case);
+        const uc = useCases[0]._id;
+
         const userAddedPersona = users.map((user) => {
-            return {...user, persona: p}
+            return {...user, persona: p, useCase: uc}
         });
 
         await User.insertMany(userAddedPersona);
@@ -35,6 +41,7 @@ const destroyData = async () => {
     try {
         await User.deleteMany();
         await Persona.deleteMany();
+        await UseCase.deleteMany();
 
         console.log("Data Destroy!");
         process.exit();
