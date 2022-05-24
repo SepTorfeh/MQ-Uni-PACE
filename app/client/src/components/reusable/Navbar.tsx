@@ -43,7 +43,7 @@ const Navbar = () => {
 
     return (
         <div className="navbar">
-            <img src={logo} />
+            <img src={logo} className="navbar-logo" />
             <div className="dropdown-menu">
                 <div className="user-circle">{initials}</div>
                 <div className="dropdown-content dropdown-bar">
