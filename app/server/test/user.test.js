@@ -57,7 +57,25 @@ describe("Testing user API", () => {
                 expect(user.firstName).toBe("Sep"),
                     expect(user.lastName).toBe("Torfeh")
             });
-    })
+    });
+
+    // @desc    fail logging in using incorrect pass
+    // @route   POST /api/user/login
+    // @access  Public (any one can hit this route)
+    test("Test signing up fail using an invalid password", async () => {
+        const new_account = {
+            email: "sep@test.com", password: "123"
+        }
+        await api
+            .post("/api/user/login")
+            .send(new_account)
+            .set("Content-Type", "application/json")
+            .expect(404)
+            .then((res) => {
+                expect(res.body.message).toContain("Invalid Email or Password");
+            });
+    });
+
 
     afterAll(() => {
         mongoose.disconnect();
