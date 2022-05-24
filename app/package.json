@@ -2,8 +2,10 @@
   "name": "app",
   "version": "0.1.0",
   "private": true,
+  "main": "server.js",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
     "dotenv": "^16.0.0",
     "elemental": "^0.6.1",
     "express": "^4.17.3",
@@ -19,7 +21,8 @@
     "server": "nodemon ./server/server.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node server/seeder",
-    "data:destroy": "node server/seeder -d"
+    "data:destroy": "node server/seeder -d",
+    "test": "NODE_ENV=test jest --verbose --coverage --testPathPattern --detectOpenHandles server"
   },
   "devDependencies": {
     "@shelf/jest-mongodb": "^2.1.0",
