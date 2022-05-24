@@ -1,6 +1,10 @@
 import '../../styles/index.css'
 import { useAppDispatch, useAppSelector } from '../../redux/hooks'
+<<<<<<< Updated upstream
 import { updateFirstName, updateLastName, updateToken, updateUserName } from '../../redux/login/login-slice'
+=======
+import { updateToken, updateUserName } from '../../redux/login/login-slice'
+>>>>>>> Stashed changes
 
 const Navbar = () => {
 
@@ -8,6 +12,7 @@ const Navbar = () => {
     // Faethm logo
     const logo = 'image/logo_white.svg'
     
+<<<<<<< Updated upstream
     //const user = localStorage.getItem('userInfo')
     //let initials
 
@@ -17,6 +22,11 @@ const Navbar = () => {
         //name.length > 1 ? initials = name.shift().charAt(0) + name.pop().charAt(0) : initials = name.shift().charAt(0)
         //initials = initials.toUpperCase()
     //}
+=======
+    const user = localStorage.getItem('userInfo')
+    // const user = useAppSelector(state => state.login.name);
+    let initials
+>>>>>>> Stashed changes
 
     // Use name for user-icon
     // using redux
@@ -43,7 +53,7 @@ const Navbar = () => {
 
     return (
         <div className="navbar">
-            <img src={logo} />
+            <img src={logo} className="navbar-logo" />
             <div className="dropdown-menu">
                 <div className="user-circle">{initials}</div>
                 <div className="dropdown-content dropdown-bar">
