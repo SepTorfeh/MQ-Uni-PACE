@@ -5,21 +5,11 @@ import { updateFirstName, updateLastName, updateToken, updateUserName } from '..
 const Navbar = () => {
 
     const dispatch = useAppDispatch();
+    
     // Faethm logo
     const logo = 'image/logo_white.svg'
-    
-    //const user = localStorage.getItem('userInfo')
-    //let initials
 
-    //// Use name for user-icon
-    //if (user) {
-        //const name = JSON.parse(user || '{}').name.split(' ')
-        //name.length > 1 ? initials = name.shift().charAt(0) + name.pop().charAt(0) : initials = name.shift().charAt(0)
-        //initials = initials.toUpperCase()
-    //}
-
-    // Use name for user-icon
-    // using redux
+    // Use name for user-icon using redux
     let initials
     const firstName = useAppSelector(state => state.login.firstName);
     const lastName = useAppSelector(state => state.login.lastName);
@@ -28,7 +18,7 @@ const Navbar = () => {
         initials = firstName?.charAt(0) + lastName?.charAt(0);
         initials = initials.toUpperCase();
     } else {
-        initials = "";
+        initials = '';
     }
 
     // Logout
@@ -41,17 +31,40 @@ const Navbar = () => {
         dispatch(updateLastName(""));
     }
 
-    return (
-        <div className="navbar">
-            <img src={logo} className="navbar-logo" />
-            <div className="dropdown-menu">
-                <div className="user-circle">{initials}</div>
-                <div className="dropdown-content dropdown-bar">
-                    <a onClick={() => logout()} className="dropdown-item dropdown-button">Logout</a>
+    if (window.location.href.includes('dashboard')) {
+        return (
+            <div className="navbar">
+                <img src={logo} className="navbar-logo" />
+                <div className="navbar-links animated fadeInDown">
+                    <div className="link">Workforce Insights<i className="fa fa-angle-down" /></div>
+                    <div className="link">Technology Insights<i className="fa fa-angle-down" /></div>
+                    <div className="link">Job Insights<i className="fa fa-angle-down" /></div>
+                    <div className="link border-right">Job Profiles</div>
+                    <div className="link">Job Corridors</div>
+                </div>
+                <div className="dropdown-menu">
+                    <div className="user-circle">{initials}</div>
+                    <div className="dropdown-content dropdown-bar">
+                        <a onClick={() => logout()} className="dropdown-item dropdown-button">Logout</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    )
+        )
+    } else {
+        return (
+            <div className="navbar">
+                <img src={logo} className="navbar-logo" />
+                <div className="dropdown-menu">
+                    <div className="user-circle">{initials}</div>
+                    <div className="dropdown-content dropdown-bar">
+                        <a onClick={() => logout()} className="dropdown-item dropdown-button">Logout</a>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+    
 
 }
 
