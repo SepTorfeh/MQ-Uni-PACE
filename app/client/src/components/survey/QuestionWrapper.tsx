@@ -28,8 +28,8 @@ const QuestionWrapper = () => {
     // Please pass data to the db - Lance
     const submit = () => {
         const validation = !data.some(el => el < 0)
-        //console.log(data)
-        //validation ? navigate('/loading') : handleOpen()
+        // Please pass data to Redux - Lance
+        sessionStorage.setItem('data', data.toString())
         if(validation){
             dispatch(fetchSurveySubmitAsync({persona, data}));
             navigate('/loading');

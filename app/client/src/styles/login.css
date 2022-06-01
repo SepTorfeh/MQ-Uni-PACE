@@ -5,7 +5,7 @@
     grid-template-columns: 60% 40%;
 }
 
-.box{
+.box {
     display: flex;
     flex-direction: column;
     justify-content: center;

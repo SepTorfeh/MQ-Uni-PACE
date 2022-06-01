@@ -7,21 +7,21 @@
 
 @keyframes fadeInDown {
     from {
-        transform: translate3d(0,0,0)
+        transform: translate3d(0,-10px,0)
     }
 
     to {
-        transform: translate3d(0,40px,0);
+        transform: translate3d(0,0,0);
         opacity: 1
     }
 }
 @-webkit-keyframes fadeInDown {
     from {
-        transform: translate3d(0,0,0)
+        transform: translate3d(0,-10px,0)
     }
 
     to {
-        transform: translate3d(0,40px,0);
+        transform: translate3d(0,0,0);
         opacity: 1
     }
 }
@@ -36,21 +36,21 @@
 
 @keyframes fadeInUp {
     from {
-        transform: translate3d(0,40px,0)
+        transform: translate3d(0,-20px,0)
     }
 
     to {
-        transform: translate3d(0,0,0);
+        transform: translate3d(0,-30px,0);
         opacity: 1
     }
 }
 @-webkit-keyframes fadeInUp {
     from {
-        transform: translate3d(0,40px,0)
+        transform: translate3d(0,0,0)
     }
 
     to {
-        transform: translate3d(0,0,0);
+        transform: translate3d(0,-30px,0);
         opacity: 1
     }
 }
